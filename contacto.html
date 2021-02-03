@@ -89,6 +89,7 @@
 <h1 class="Vidatumarca">¡Démosle vida a tu marca!</h1>
   <p class="TextoVidatumarca">Completá el siguiente formulario, me encantaría que me cuentes tus ideas, y podamos trabajar en equipo, para mi es muy importante conocer cada detalle para lograr grandes resultados en cada propuesta de diseño.</p>
 
+<nav></nav>
 <section class="content">
     <div class="row">
         <div class="col-sm-6 mx-auto">
@@ -105,11 +106,11 @@
                         </div>
                         <div class="form-group">
                             <label for=""></label>
-                            <input id="email" name="email" type="text" placeholder="¿Cómo puedo ayudarte?" class="form-control">
+                            <input id="ayudarte" name="email" type="text" placeholder="¿Cómo puedo ayudarte?" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for=""></label>
-                            <input id="phone" name="phone" type="text" placeholder="¿Cómo me conociste? Por redes sociales, recomendación, Google, etc." class="form-control">
+                            <input id="redes" name="phone" type="text" placeholder="¿Cómo me conociste? Por redes sociales, recomendación, Google, etc." class="form-control">
                         </div>
                         <div class="form-group">
                           <label for="Servicios">¿Qué servicio te interesa?</label>
@@ -131,9 +132,13 @@
                                <textarea class="form-control" id="message" name="message" placeholder="Dejame tu mensaje o comentario y a la brevedad me comunico con vos." rows="7"></textarea>
                               </div>
                           </div>
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Guardar datos</label>
+                          </div>
                           <div class="form-group">
                             <div class="col-lg text-center">
-                              <button type="submit" class="btn" class="btn btn-primary btn-lg">Enviar</button>
+                              <button type="submit" id="boton" class="btn btn-primary btn-lg">Enviar</button>
                             </div>
                     </div>
                 </form>
@@ -191,6 +196,7 @@
 </section>        
 </footer>
  
+<script src="js/cotizador.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 </body>
