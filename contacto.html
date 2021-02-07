@@ -102,11 +102,11 @@
                         </div>
                         <div class="form-group">
                           <label for=""></label>
-                          <input id="lname" name="name" type="text" placeholder="Nombre de tu marca" class="form-control">
+                          <input id="lmarca" name="name" type="text" placeholder="Nombre de tu marca" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for=""></label>
-                            <input id="ayudarte" name="email" type="text" placeholder="¿Cómo puedo ayudarte?" class="form-control">
+                            <input id="email" name="email" type="text" placeholder="Tu email" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for=""></label>
@@ -115,21 +115,22 @@
                         <div class="form-group">
                           <label for="Servicios">¿Qué servicio te interesa?</label>
                            <select id="inputServicios" class="form-control">
-                            <option selected> Seleccionar servicio</option>
-                            <option>Identidad visual</option>
-                            <option>Identidad visual y Piezas Gráficas</option>
-                            <option>Identidad visual y Diseño de Feed</option>
-                            <option>Rediseño de identidad</option>
-                            <option>Diseño de feed</option>
-                            <option>Plantillas para Instagram</option>
-                            <option>Piezas Gráficas</option>
-                            <option>Diseño Web</option>
+                            <option selected value=""> Seleccionar servicio</option>
+                            <option value="0">Identidad visual</option>
+                            <option value="1">Identidad visual y Piezas Gráficas</option>
+                            <option value="2">Identidad visual y Diseño de Feed</option>
+                            <option value="3">Rediseño de identidad</option>
+                            <option value="4">Diseño de feed</option>
+                            <option value="5">Plantillas para Instagram</option>
+                            <option value="6">Piezas Gráficas</option>
+                            <option value="7">Diseño Web</option>
                            </select>  
                           </div>
                           <div class="form-group">
                               <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
                               <div class="col-md-">
-                               <textarea class="form-control" id="message" name="message" placeholder="Dejame tu mensaje o comentario y a la brevedad me comunico con vos." rows="7"></textarea>
+                                <label for="proyecto">Contame de tu proyecto</label>
+                               <textarea class="form-control" id="message" name="message" placeholder="Detalles que puedan ayudarme a conocer un poco más tu marca." rows="7"></textarea>
                               </div>
                           </div>
                           <div class="form-check">
@@ -137,10 +138,19 @@
                             <label class="form-check-label" for="exampleCheck1">Guardar datos</label>
                           </div>
                           <div class="form-group">
+                            <label for=""></label>
                             <div class="col-lg text-center">
-                              <button type="submit" id="boton" class="btn btn-primary btn-lg">Enviar</button>
+                              <button type="button" id="boton" class="btn btn-primary btn-lg" onkeypress="capturarEnter(event);" onclick="getData()">Enviar</button>
                             </div>
                     </div>
+                    <div id="alert-calculo" class="alert alert-warning alert-dismissible fade hide" role="alert"
+                     style="margin-top: 30px; margin-bottom: 60px;">
+
+                    <i class="bi bi-star" style="margin-right: 5px;"></i> Este servicio tiene un precio de <strong id="alert-calculo-precio"></strong> U$D
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 </form>
             </div>
         </div>
@@ -196,7 +206,8 @@
 </section>        
 </footer>
  
-<script src="js/cotizador.js"></script>
+<script src="js/script.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 </body>
