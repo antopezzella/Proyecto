@@ -29,6 +29,9 @@ var productos = [
     const base = 2000;
 
     switch (this.marca) {
+        case '0':
+            cantidad = base * 1.05;
+            break;
         case '1':
             cantidad = base * 1.15;
             break;
@@ -132,11 +135,26 @@ var servicios = document.getElementById("inputServicios").value;
 var mensaje = document.getElementById("message").value;
 
 console.log(nombre + marca + email + servicios + mensaje)
+
 }
 
+$(document).ready(function(){
 
+    $('input[type="text"],select,textarea').each(function(){    
+            var name = $(this).attr('name'); 
+            value=localStorage.getItem(name);
+            var value = $(this).val(value);
+     })
 
+    setInterval(function(){
+        $('input[type="text"],select,textarea').each(function(){    
+            var name = $(this).attr('name');
+            var value = $(this).val();
+            localStorage.setItem(name, value);
+        })
+        
 
-
+    }, 1000);                 
+})
 
 

@@ -20,6 +20,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <link rel="stylesheet" href="SCSS/css/Estilo.css"> 
     
 
@@ -86,6 +87,7 @@
 </nav>
 </header>
      
+
 <h1 class="Vidatumarca">¡Démosle vida a tu marca!</h1>
   <p class="TextoVidatumarca">Completá el siguiente formulario, me encantaría que me cuentes tus ideas, y podamos trabajar en equipo, para mi es muy importante conocer cada detalle para lograr grandes resultados en cada propuesta de diseño.</p>
 
@@ -98,11 +100,11 @@
                     <div class="box-body">
                         <div class="form-group">
                             <label for=""></label>
-                            <input id="fname" name="name" type="text" placeholder="¿Cuál es tu nombre y apellido?" class="form-control">
+                            <input id="fname" name="nombre" type="text" placeholder="¿Cuál es tu nombre y apellido?" class="form-control">
                         </div>
                         <div class="form-group">
                           <label for=""></label>
-                          <input id="lmarca" name="name" type="text" placeholder="Nombre de tu marca" class="form-control">
+                          <input id="lmarca" name="marca" type="text" placeholder="Nombre de tu marca" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for=""></label>
@@ -110,11 +112,11 @@
                         </div>
                         <div class="form-group">
                             <label for=""></label>
-                            <input id="redes" name="phone" type="text" placeholder="¿Cómo me conociste? Por redes sociales, recomendación, Google, etc." class="form-control">
+                            <input id="redes" name="redes" type="text" placeholder="¿Cómo me conociste? Por redes sociales, recomendación, Google, etc." class="form-control">
                         </div>
                         <div class="form-group">
                           <label for="Servicios">¿Qué servicio te interesa?</label>
-                           <select id="inputServicios" class="form-control">
+                           <select id="inputServicios" class="form-control" name="servicios">
                             <option selected value=""> Seleccionar servicio</option>
                             <option value="0">Identidad visual</option>
                             <option value="1">Identidad visual y Piezas Gráficas</option>
@@ -130,7 +132,7 @@
                               <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
                               <div class="col-md-">
                                 <label for="proyecto">Contame de tu proyecto</label>
-                               <textarea class="form-control" id="message" name="message" placeholder="Detalles que puedan ayudarme a conocer un poco más tu marca." rows="7"></textarea>
+                               <textarea class="form-control" id="message" name="mensaje" placeholder="Detalles que puedan ayudarme a conocer un poco más tu marca." rows="7"></textarea>
                               </div>
                           </div>
                           <div class="form-check">
@@ -143,10 +145,8 @@
                               <button type="button" id="boton" class="btn btn-primary btn-lg" onkeypress="capturarEnter(event);" onclick="getData()">Enviar</button>
                             </div>
                     </div>
-                    <div id="alert-calculo" class="alert alert-warning alert-dismissible fade hide" role="alert"
-                     style="margin-top: 30px; margin-bottom: 60px;">
-
-                    <i class="bi bi-star" style="margin-right: 5px;"></i> Este servicio tiene un precio de <strong id="alert-calculo-precio"></strong> U$D
+                    <div id="alert-calculo" class="alert alert-warning alert-dismissible fade hide" role="alert" style="margin-top: 30px; margin-bottom: 60px;">
+                    <i class="bi bi-star" style="margin-right: 5px;"></i> Este servicio tiene un precio de <strong id="alert-calculo-precio"></strong> $
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
