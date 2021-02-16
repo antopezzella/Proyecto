@@ -1,24 +1,4 @@
-var productos = [
-    "Identidad visual",
-    "Identidad visual y Piezas Gráficas",
-    "Identidad visual y Diseño de Feed",
-    "Rediseño de identidad",
-    "Diseño de feed",
-    "Plantillas para Instagram",
-    "Piezas Gráficas",
-    "Diseño Web",
-    ]
-    
-    for(var i=0; i<productos.length; i++){
-        console.log(productos[i]);
-      }
-
-    console.log("Estos son nuestros servicios " + productos.toString());
-
-
-
-
-    function Servicios(producto) 
+function Servicios(producto) 
     {
         this.producto = producto;
     }
@@ -26,32 +6,31 @@ var productos = [
     Servicios.cotizarServicio = function () {
    
     let cantidad;
-    const base = 2000;
-
-    switch (this.marca) {
+ 
+    switch (this.producto) {
         case '0':
-            cantidad = base * 1.05;
+            cantidad 
             break;
         case '1':
-            cantidad = base * 1.15;
+            cantidad 
             break;
         case '2':
-            cantidad = base * 1.05;
+            cantidad 
             break;
         case '3':
-            cantidad = base * 1.35;
+            cantidad 
             break;
         case '4':
-            cantidad = base * 1.15;
+            cantidad 
             break;
         case '5':
-            cantidad = base * 1.05;
+            cantidad
             break;
         case '6':
-            cantidad = base * 1.35;
+            cantidad 
             break;
         case '7':
-            cantidad = base * 1.35;
+            cantidad 
             break;
     }
             return cantidad;
@@ -75,24 +54,27 @@ function cotizarServicio(event){
     return Number.parseFloat(costo).toFixed(2);
 }
 
+var buttonCalcular = document.getElementById("modal-servicio");
 
-
-//var buttonCalcular = document.getElementById("boton");
-
-//buttonCalcular.addEventListener("click", cotizarServicio);
+buttonCalcular.addEventListener("click", cotizarServicio);
 
 
 
-function capturarEnter(enter) {
-    if (event.which == 13 || event.keyCode == 13) {
-        
-    var buttonCalcular = document.getElementById("boton");
+var check = document.getElementById ("exampleCheck1") 
+check.checked = true;
+    
 
-    buttonCalcular.addEventListener("click", cotizarServicio);
-     }
- }
- 
+ $("#modal-servicio").click(function(event) {
+    $("#formLimpiar")[0].reset(event);
+});
 
+$("#enviar-modal").click(function(event) {
+    $("#formLimpiar")[0].submit(event);
+});
+
+$("#modificar-modal").click(function(event) {
+    $("#formLimpiar")[0].reset(event);
+});
 
 var nombre = document.getElementById("fname")
 var marca = document.getElementById("lmarca")
@@ -123,10 +105,6 @@ function validarCampo(event){
 
 }
 
-var check = document.getElementById ("exampleCheck1") 
-check.checked = true
-
-
 var getData = function (){
 var nombre = document.getElementById("fname").value;
 var marca = document.getElementById("lmarca").value;
@@ -156,5 +134,55 @@ $(document).ready(function(){
 
     }, 1000);                 
 })
+    
 
-
+    function validaForm(){
+        if($("#fname").val() === ''){
+            $('.inputIngreso').append('<label for="nombre" id="nombre">Completá todos los campos para continuar</label>')
+            $("#fname").focus();    
+            return false;
+        }
+        if($("#lmarca").val() === ''){
+            $('.inputIngreso').append('<label for="nombre" id="nombre">Completá todos los campos para continuar</label>')
+            $("#lmarca").focus();    
+            return false;
+        }
+        if($("#email").val() === ''){
+            $('.inputIngreso').append('<label for="nombre" id="nombre">Completá todos los campos para continuar</label>')
+            $("#email").focus();    
+            return false;
+        }
+        if($("#redes").val() === ''){
+            $('.inputIngreso').append('<label for="nombre" id="nombre">Completá todos los campos para continuar</label>')
+            $("#redes").focus();    
+            return false;
+        }
+        if($("#inputServicios").val() === ''){
+            $('.inputIngreso').append('<label for="nombre" id="nombre">Completá todos los campos para continuar</label>')
+            $("#inputServicios").focus();    
+            return false;
+        }
+        if($("#message").val() === ''){
+            $('.inputIngreso').append('<label for="nombre" id="nombre">Completá todos los campos para continuar</label>')
+            $("#message").focus();    
+            return false;
+        }
+        else return true;
+    }
+    
+    
+$(document).ready( function() {  
+    $("#modal-servicio").click( function() {    
+        if(validaForm()){                               
+            $.post("enviar.php",$("#formLimpiar").serialize(),function(res){
+                $("#formulario").fadeOut("slow");   
+                if(res == 0){
+                 $(".inputIngreso").delay(500).fadeIn("slow");     
+                } else {
+                    $(".inputIngreso").delay(500).fadeIn("slow");     
+                   }
+            });
+         }
+     });    
+});
+    
