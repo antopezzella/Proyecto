@@ -14,3 +14,10 @@ $(document).ready(function(){
 
 
 
+$('#contacto-enviar').click(function(){
+	$('#prueba').show(500);
+});
+
+$('#contacto-enviar').click(function(event) {
+    $("#email-contacto")[0].reset(event);
+});

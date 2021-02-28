@@ -62,19 +62,36 @@ buttonCalcular.addEventListener("click", cotizarServicio);
 
 var check = document.getElementById ("exampleCheck1") 
 check.checked = true;
-    
 
- $("#modal-servicio").click(function(event) {
-    $("#formLimpiar")[0].reset(event);
-});
 
-$("#enviar-modal").click(function(event) {
-    $("#formLimpiar")[0].submit(event);
-});
 
-$("#modificar-modal").click(function(event) {
-    $("#formLimpiar")[0].reset(event);
-});
+//function validaForm(selector, label){
+//    if($(selector).val() === ''){
+//        $('.inputIngreso').append(label)
+//        $(selector).focus();  
+//        return false;
+//    } else{
+//       return true;
+// }
+//}
+
+//let fname = $("#fname")
+//let lmarca = $("#lmarca")
+//let semail = $("#email")
+//let rredes = $("#redes")
+//let inputserv = $("#inputServicios")
+//let imessage = $("#message")
+//let label = $(('<label for="nombre" id="nombre">Completá todos los campos para continuar</label>'))
+
+
+//validaForm(lmarca, label);
+//validaForm(semail, label);
+//validaForm(rredes, label);
+//validaForm(inputserv, label);
+//validaForm(imessage, label);
+//validaForm(fname, label);
+
+
 
 var nombre = document.getElementById("fname")
 var marca = document.getElementById("lmarca")
@@ -152,9 +169,9 @@ $(document).ready(function(){
             $("#email").focus();    
             return false;
         }
-        if($("#redes").val() === ''){
+       if($("#redes").val() === ''){
             $('.inputIngreso').append('<label for="nombre" id="nombre">Completá todos los campos para continuar</label>')
-            $("#redes").focus();    
+           $("#redes").focus();    
             return false;
         }
         if($("#inputServicios").val() === ''){
@@ -168,21 +185,41 @@ $(document).ready(function(){
             return false;
         }
         else return true;
-    }
+     }
     
-    
+
 $(document).ready( function() {  
     $("#modal-servicio").click( function() {    
         if(validaForm()){                               
             $.post("enviar.php",$("#formLimpiar").serialize(),function(res){
-                $("#formulario").fadeOut("slow");   
-                if(res == 0){
-                 $(".inputIngreso").delay(500).fadeIn("slow");     
-                } else {
-                    $(".inputIngreso").delay(500).fadeIn("slow");     
-                   }
+                $(".formulario").fadeOut("slow");   
+                 if(res == 0){
+                  $(".inputIngreso").delay(500).fadeIn("slow");     
+                 } else {
+                  $(".inputIngreso").delay(500).fadeIn("slow");     
+                }
             });
          }
      });    
+ });
+
+
+ $("#enviar-modal").click(function(){ 
+    $(".inputIngreso").fadeOut("slow"); 
 });
-    
+
+
+$(".inputIngreso").css("color", "tomato");
+
+$("#enviar-modal").click(function(event) {
+    $("#formLimpiar")[0].reset(event);
+});
+
+
+//$("#enviar-modal").click(function(event) {
+//   $("#formLimpiar")[0].submit(event);
+//});
+
+
+
+
