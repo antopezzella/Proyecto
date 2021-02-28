@@ -191,7 +191,7 @@ $(document).ready(function(){
 $(document).ready( function() {  
     $("#modal-servicio").click( function() {    
         if(validaForm()){                               
-            $.post("enviar.php",$("#formLimpiar").serialize(),function(res){
+            $.post("datos.php",$("#formLimpiar").serialize(),function(res){
                 $(".formulario").fadeOut("slow");   
                  if(res == 0){
                   $(".inputIngreso").delay(500).fadeIn("slow");     
@@ -201,7 +201,8 @@ $(document).ready( function() {
             });
          }
      });    
- });
+ })
+
 
 
  $("#enviar-modal").click(function(){ 
@@ -221,5 +222,15 @@ $("#enviar-modal").click(function(event) {
 //});
 
 
+$('#contacto-enviar').click(function(){
+	$('#prueba').show(500);
+});
+
+$('#contacto-enviar').click(function(event) {
+    $("#email-contacto")[0].reset(event);
+});
 
 
+
+
+  
