@@ -87,6 +87,7 @@
 </nav>
 </header>
 
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document" id="modalExample">
@@ -115,7 +116,6 @@
 
 
 
-
 <h1 class="Vidatumarca">¡Démosle vida a tu marca!</h1>
   <p class="TextoVidatumarca">Completá el siguiente formulario, me encantaría que me cuentes tus ideas, y podamos trabajar en equipo, para mi es muy importante conocer cada detalle para lograr grandes resultados en cada propuesta de diseño.</p>
 
@@ -124,11 +124,12 @@
     <div id="formulario" class="row">
         <div class="col-sm-6 mx-auto">
             <div class="box box-warning">
-                <form  id="formLimpiar" class="user" method="get" action="/destino.php" method="post">
+                <form  id="formLimpiar" class="user" method="get">
                     <div class="box-body">
                         <div class="form-group" id="form-group">
                             <label type="text"></label>
-                            <input id="fname" name="name" type="text" placeholder="¿Cuál es tu nombre y apellido?" class="form-control" required="required">
+                            <input id="fname" name="name" type="text" oninput="validar(this)" placeholder="¿Cuál es tu nombre y apellido?" class="form-control" required="required">
+                            <span><i class="inputNombre"></i></span>
                         </div>
                         <div class="form-group" id="form-group">
                           <label type="text"></label>
@@ -137,6 +138,7 @@
                         <div class="form-group" id="form-group">
                           <label type="text"></label>
                            <input id="email" name="email" type="text" placeholder="Tu email" class="form-control" required="required">
+                           <span><i class="inputEmail"></i></span>
                         </div>
                         <div class="form-group" id="form-group">
                           <label type="text"></label>
@@ -175,7 +177,7 @@
                           <div class="form-group">
                             <label for=""></label>
                             <div class="col-lg text-center">
-                              <button type=“submit”  class="btn btn-primary btn-lg" onclick="getData()" id="modal-servicio"  data-toggle="modal" data-target="#exampleModal">Enviar</button>
+                              <button type="button" class="btn btn-primary btn-lg" onclick="getData()" id="modal-servicio"  data-toggle="modal" data-target="#exampleModal">Enviar</button>
                             </div>       
                     </div>
                 </form>
@@ -243,5 +245,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDDuGt0E5IEGkcE6ZfrKfUtE9Ko_de66pA"></script>
 </body>
 </html>

@@ -232,5 +232,35 @@ $('#contacto-enviar').click(function(event) {
 
 
 
+$(document).ready(function() {
+    $('#modal-servicio').click(function(){
+        if($("#email").val().indexOf('@', 0) == -1 || $("#email").val().indexOf('.', 0) == -1) {
+            $('.inputEmail').append('<label for="nombre" id="nombre">El correo electrónico no es correcto</label>')
+            return false;
+        }
+    });
+});
 
-  
+$(".inputEmail").css("color", "tomato");
+
+
+const validar = function(campo) {
+    let valor = campo.value;
+    if(/\d/.test(valor)) {
+      campo.value = valor.replace(/\d/g,'');
+    }
+  };
+
+
+
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+    var myOptions = {
+      zoom: 8,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.TERRAIN,
+      disableDefaultUI: true
+    }
+    var map = new google.maps.Map(document.querySelector("#map_canvas"), myOptions);
+  });
+
