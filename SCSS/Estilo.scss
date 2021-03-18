@@ -103,6 +103,7 @@ ul a:hover, ul a:focus, ul a:visited{
   overflow: hidden;
   background-color:#33353d;
 }
+
 .jumbotron video {
   position: absolute;
   z-index: 1;
@@ -179,21 +180,21 @@ ul a:hover, ul a:focus, ul a:visited{
   @include textos;
 }
 
-.row {
+.row { 
  margin:auto
 }
 
-
-.SoyAnto { 
+.display-1 { 
     color: #d0c9ad;
     font-family: 'Italiana', serif;
     font-weight: 700;
     letter-spacing: 0.07em;
     font-size: 2.7em;
-    box-sizing: border-box;
-    max-width:100%}
+    max-width:100%;
+    margin-bottom: 1em;
+  }
 
-.TextoSobremi { 
+#TextoSobremi { 
     color: $colorPalido;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
@@ -202,42 +203,12 @@ ul a:hover, ul a:focus, ul a:visited{
     width: 34em;
     text-align: justify;}
 
-.TituloyTexto { 
-    position: absolute;
-    display: grid;
-    grid-template-rows: 5em;
-    margin: 3.8em 40.5em;
-    max-width: 100%;
-}
 
-.FotoYo { 
-  margin-top: 3.5em;
-  display: flex;
-  align-self: center;
-  margin-left: 8em;
-  height: auto;
-  max-width: 100%;}
-
-
-.FotoYo	{
-  transition:all .9s ease-in-out;
-}
-.SobreMi:hover .FotoYo {
-  -webkit-transform:scale(1.1);
-  transform:scale(1.1);
-}
-.FotoYo {
-  overflow:hidden;
-}
-
-
-.SobreMi { 
-  margin-top: 6em;
+#jumbo {
+  padding-top:60px;
+  padding-bottom:60px;
   background-color: $verdecito;
-  height: 40em;
-  width:100%vw;
-  display:flex;
-  justify-items: auto;
+  margin-top: 6em;
 }
 
 
@@ -251,7 +222,6 @@ ul a:hover, ul a:focus, ul a:visited{
   margin-bottom:0.6em;
   display: flex;
   max-width:100%}
-
 
 
 .ultimosproyectos {
@@ -842,3 +812,5 @@ hr {
   font-family: 'Ubuntu', sans-serif;
   font-size: 0.9em;;
 }
+
+

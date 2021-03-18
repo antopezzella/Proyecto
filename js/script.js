@@ -217,13 +217,8 @@ $("#enviar-modal").click(function(event) {
 });
 
 
-//$("#enviar-modal").click(function(event) {
-//   $("#formLimpiar")[0].submit(event);
-//});
-
-
 $('#contacto-enviar').click(function(){
-	$('#prueba').show(500);
+    $('#prueba').show(500);
 });
 
 $('#contacto-enviar').click(function(event) {
@@ -244,13 +239,13 @@ $(document).ready(function() {
 $(".inputEmail").css("color", "tomato");
 
 
+
 const validar = function(campo) {
     let valor = campo.value;
     if(/\d/.test(valor)) {
       campo.value = valor.replace(/\d/g,'');
     }
   };
-
 
 
   navigator.geolocation.getCurrentPosition(function(position) {
