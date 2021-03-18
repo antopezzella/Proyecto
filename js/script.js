@@ -209,13 +209,11 @@ $(document).ready( function() {
     $(".inputIngreso").fadeOut("slow"); 
 });
 
-
 $(".inputIngreso").css("color", "tomato");
 
 $("#enviar-modal").click(function(event) {
     $("#formLimpiar")[0].reset(event);
 });
-
 
 $('#contacto-enviar').click(function(){
     $('#prueba').show(500);
@@ -230,7 +228,7 @@ $('#contacto-enviar').click(function(event) {
 $(document).ready(function() {
     $('#modal-servicio').click(function(){
         if($("#email").val().indexOf('@', 0) == -1 || $("#email").val().indexOf('.', 0) == -1) {
-            $('.inputEmail').append('<label for="nombre" id="nombre">El correo electrónico no es correcto</label>')
+            $('.inputEmail').append('<label for="correo" id="correo">El correo electrónico no es correcto</label>')
             return false;
         }
     });
@@ -238,6 +236,9 @@ $(document).ready(function() {
 
 $(".inputEmail").css("color", "tomato");
 
+$("#enviar-modal").click(function(){ 
+    $('.inputEmail').fadeOut("slow"); 
+});
 
 
 const validar = function(campo) {
